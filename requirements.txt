@@ -1,0 +1,10 @@
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+joblib
+streamlit
+jupyter
+# optional: SHAP summary plot (src/pipeline.py uses it automatically if installed)
+shap

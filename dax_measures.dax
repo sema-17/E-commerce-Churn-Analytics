@@ -1,0 +1,53 @@
+// =====================================================================
+// DAX measures for the Customer Intelligence dashboard
+// Tables: fact_orders, customer_scores, dim_date
+// Create a table called "_Measures" (Enter Data -> blank) and add these there.
+// =====================================================================
+
+// ---------- Sales ----------
+Total Revenue = SUM ( fact_orders[net_amount] )
+
+Total Orders = DISTINCTCOUNT ( fact_orders[order_id] )
+
+Active Customers = DISTINCTCOUNT ( fact_orders[customer_id] )
+
+Avg Order Value = DIVIDE ( [Total Revenue], [Total Orders] )
+
+Return Rate = AVERAGE ( fact_orders[returned] )
+
+Revenue MoM % =
+VAR _current = [Total Revenue]
+VAR _previous =
+    CALCULATE ( [Total Revenue], DATEADD ( dim_date[date], -1, MONTH ) )
+RETURN
+    DIVIDE ( _current - _previous, _previous )
+
+// ---------- Customers & churn ----------
+Scored Customers = DISTINCTCOUNT ( customer_scores[customer_id] )
+
+Actual Churn Rate = AVERAGE ( customer_scores[churn] )
+
+Avg Churn Probability = AVERAGE ( customer_scores[churn_prob] )
+
+High Risk Customers =
+CALCULATE ( COUNTROWS ( customer_scores ), customer_scores[risk_level] = "High" )
+
+High Risk % = DIVIDE ( [High Risk Customers], [Scored Customers] )
+
+// ---------- Value ----------
+Annual Value at Risk = SUM ( customer_scores[value_at_risk] )
+
+Expected Annual Value = SUM ( customer_scores[expected_annual_value] )
+
+Risk Adjusted CLV = SUM ( customer_scores[risk_adjusted_clv] )
+
+Value at Risk % = DIVIDE ( [Annual Value at Risk], [Expected Annual Value] )
+
+// Illustrative what-if: change 0.15 to a What-If parameter if you want a slider
+Recoverable Value (15%) =
+CALCULATE ( [Annual Value at Risk], customer_scores[risk_level] = "High" ) * 0.15
+
+// ---------- Handy labels ----------
+Subtitle Text =
+"Churn = no purchase in next 120 days | Scored customers: "
+    & FORMAT ( [Scored Customers], "#,0" )

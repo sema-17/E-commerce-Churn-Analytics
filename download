@@ -1,0 +1,17 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Power BI temp files
+*.pbi*.tmp
+
+# If you swap in a LARGE real dataset, keep it out of Git and document where to download it:
+# data/raw/large_dataset.csv

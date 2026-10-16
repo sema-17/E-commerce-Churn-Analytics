@@ -1,0 +1,18 @@
+{
+  "name": "Customer Intelligence",
+  "dataColors": ["#2F5BEA", "#1FA971", "#F59E0B", "#E5484D", "#06B6D4", "#6B7280", "#8B5CF6", "#EC4899"],
+  "background": "#FFFFFF",
+  "foreground": "#111827",
+  "tableAccent": "#2F5BEA",
+  "good": "#1FA971",
+  "neutral": "#F59E0B",
+  "bad": "#E5484D",
+  "textClasses": {
+    "title": { "fontFace": "Segoe UI Semibold", "fontSize": 14, "color": "#111827" },
+    "label": { "fontFace": "Segoe UI", "fontSize": 10, "color": "#6B7280" },
+    "callout": { "fontFace": "Segoe UI Semibold", "fontSize": 28, "color": "#111827" }
+  },
+  "visualStyles": {
+    "page": { "*": { "background": [{ "color": { "solid": { "color": "#F4F6FA" } } }] } }
+  }
+}
