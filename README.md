@@ -7,8 +7,7 @@ An end-to-end data analytics project: clean raw e-commerce orders with **SQL and
 ![scikit-learn](https://img.shields.io/badge/ML-scikit--learn-green)
 ![Power BI](https://img.shields.io/badge/BI-Power%20BI-yellow)
 ![Streamlit](https://img.shields.io/badge/App-Streamlit-red)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
-
+![License](https://img.shields.io/badge/License-MIT-lightgrey)            
 ![Executive Overview](screenshots/dashboard_1_executive_overview.png)
 
 > **About the data:** this repo ships a small **synthetic** order dataset (about 1.8 MB, 28k rows, 2,200 customers)
@@ -193,10 +192,10 @@ business storytelling · reproducible project structure.
 - Add SHAP explanations, an A/B test of retention campaigns, scheduled monthly scoring and a deployed Streamlit app.
 
 ## 👤 Author
-**Your Name**
-- LinkedIn: [your-linkedin-url](https://linkedin.com/in/your-profile)
-- GitHub: [your-github-username](https://github.com/your-username)
-- Email: your.email@example.com
+**Sema RP**
+- LinkedIn: (https://www.linkedin.com/in/semarp25)
+- GitHub:  (https://github.com/sema-17)
+- Email: rpsemaraja174@gmail.com
 
 ## 📄 License
 MIT - see [LICENSE](LICENSE).
